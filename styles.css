@@ -187,3 +187,12 @@ footer p{margin:0}
 .live-price span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--sage-dark)}
 .live-price strong{font-family:"Playfair Display",serif;font-size:26px}
 .live-price small{color:var(--muted)}
+
+.step-list div{flex-wrap:wrap}
+.step-list div small{
+  flex-basis:100%;
+  margin-left:49px;
+  margin-top:-7px;
+  color:var(--muted);
+  line-height:1.45;
+}
