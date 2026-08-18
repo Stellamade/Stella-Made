@@ -86,3 +86,28 @@ orderForm.addEventListener('submit', async function (event) {
     submitButton.textContent = 'Submit Order Request';
   }
 });
+
+
+const carouselCards = Array.from(document.querySelectorAll('.carousel-card'));
+const carouselDots = Array.from(document.querySelectorAll('.carousel-dot'));
+const carouselPrev = document.querySelector('.carousel-prev');
+const carouselNext = document.querySelector('.carousel-next');
+let carouselPage = 0;
+
+function showCarouselPage(page){
+  carouselPage = (page + 2) % 2;
+  carouselCards.forEach(card => {
+    card.classList.toggle('active', Number(card.dataset.slide) === carouselPage);
+  });
+  carouselDots.forEach(dot => {
+    dot.classList.toggle('active', Number(dot.dataset.page) === carouselPage);
+  });
+}
+
+if (carouselPrev && carouselNext){
+  carouselPrev.addEventListener('click', () => showCarouselPage(carouselPage - 1));
+  carouselNext.addEventListener('click', () => showCarouselPage(carouselPage + 1));
+  carouselDots.forEach(dot => {
+    dot.addEventListener('click', () => showCarouselPage(Number(dot.dataset.page)));
+  });
+}

@@ -60,47 +60,81 @@
         <p>Choose the look you love, then personalize it with your name, font and design.</p>
       </div>
 
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="product-image"><img src="pink-tote.png" alt="Pink and beige personalized tote"></div>
+      <div class="product-carousel">
+      <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous products">←</button>
+      <div class="product-grid carousel-grid">
+        
+        <article class="product-card carousel-card active" data-slide="0">
+          <div class="product-image slide-image"><img src="product-slide-1.png" alt="Bridal Tote Collection"></div>
           <div class="product-body">
-            <span class="product-tag">Sweet & playful</span>
-            <h3>Blush Tote</h3><div class="product-price">$20.00</div>
-            <p>Soft pink and natural tones with a personalized front pocket.</p>
-            <a class="customize-link" data-product="Blush Tote" href="#order">Customize this tote →</a>
+            <h3>Bridal Tote Collection</h3>
+            <p>Personalized totes for brides, bridal parties, and special celebrations.</p>
+            <a href="#order">Customize yours →</a>
           </div>
         </article>
-
-        <article class="product-card">
-          <div class="product-image"><img src="black-tote.png" alt="Black and natural personalized tote"></div>
+        <article class="product-card carousel-card active" data-slide="0">
+          <div class="product-image slide-image"><img src="product-slide-2.png" alt="Mini Favor Bags"></div>
           <div class="product-body">
-            <span class="product-tag sage">Classic</span>
-            <h3>Black Trim Tote</h3><div class="product-price">$20.00</div>
-            <p>A clean neutral tote with bold black trim and custom lettering.</p>
-            <a class="customize-link" data-product="Black Trim Tote" href="#order">Customize this tote →</a>
+            <h3>Mini Favor Bags</h3>
+            <p>Sweet mini bags that are perfect for favors, bridal parties, and gifts.</p>
+            <a href="#order">Customize yours →</a>
           </div>
         </article>
-
-        <article class="product-card">
-          <div class="product-image"><img src="white-tote.png" alt="White and natural personalized tote"></div>
+        <article class="product-card carousel-card active" data-slide="0">
+          <div class="product-image slide-image"><img src="product-slide-3.png" alt="Crossbody Bags"></div>
           <div class="product-body">
-            <span class="product-tag beige">Light & neutral</span>
-            <h3>Ivory Tote</h3><div class="product-price">$20.00</div>
-            <p>Fresh, simple and soft with personalized script lettering.</p>
-            <a class="customize-link" data-product="Ivory Tote" href="#order">Customize this tote →</a>
+            <h3>Crossbody Bags</h3>
+            <p>Personalized crossbody styles in classic neutral colors.</p>
+            <a href="#order">Customize yours →</a>
           </div>
         </article>
-
-        <article class="product-card">
-          <div class="product-image"><img src="natural-tote.png" alt="Natural personalized tote"></div>
+        <article class="product-card carousel-card active" data-slide="0">
+          <div class="product-image slide-image"><img src="product-slide-4.png" alt="Drawstring Bags"></div>
           <div class="product-body">
-            <span class="product-tag sage">Everyday favorite</span>
-            <h3>Natural Tote</h3><div class="product-price">$20.00</div>
-            <p>A warm neutral option that works beautifully with any font color.</p>
-            <a class="customize-link" data-product="Natural Tote" href="#order">Customize this tote →</a>
+            <h3>Drawstring Bags</h3>
+            <p>Custom drawstring bags for teams, events, gifts, and everyday use.</p>
+            <a href="#order">Customize yours →</a>
+          </div>
+        </article>
+        <article class="product-card carousel-card" data-slide="1">
+          <div class="product-image slide-image"><img src="product-slide-5.png" alt="Mini Canvas Tote"></div>
+          <div class="product-body">
+            <h3>Mini Canvas Tote</h3>
+            <p>A compact canvas tote personalized with names, initials, or designs.</p>
+            <a href="#order">Customize yours →</a>
+          </div>
+        </article>
+        <article class="product-card carousel-card" data-slide="1">
+          <div class="product-image slide-image"><img src="product-slide-6.png" alt="Pink Trim Tote"></div>
+          <div class="product-body">
+            <h3>Pink Trim Tote</h3>
+            <p>A soft pink-trimmed tote made personal for your event or gift.</p>
+            <a href="#order">Customize yours →</a>
+          </div>
+        </article>
+        <article class="product-card carousel-card" data-slide="1">
+          <div class="product-image slide-image"><img src="product-slide-7.png" alt="Black Trim Tote"></div>
+          <div class="product-body">
+            <h3>Black Trim Tote</h3>
+            <p>Bold black trim with a custom name, monogram, or design.</p>
+            <a href="#order">Customize yours →</a>
+          </div>
+        </article>
+        <article class="product-card carousel-card" data-slide="1">
+          <div class="product-image slide-image"><img src="product-slide-8.png" alt="White Trim Tote"></div>
+          <div class="product-body">
+            <h3>White Trim Tote</h3>
+            <p>A clean white-trim tote with a soft, personalized finish.</p>
+            <a href="#order">Customize yours →</a>
           </div>
         </article>
       </div>
+      <button class="carousel-arrow carousel-next" type="button" aria-label="Next products">→</button>
+    </div>
+    <div class="carousel-dots" aria-label="Product pages">
+      <button class="carousel-dot active" type="button" data-page="0" aria-label="Show products 1 through 4"></button>
+      <button class="carousel-dot" type="button" data-page="1" aria-label="Show products 5 through 8"></button>
+    </div>
     </section>
 
     <section id="how" class="section how-section">
