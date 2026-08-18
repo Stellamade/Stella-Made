@@ -196,3 +196,30 @@ footer p{margin:0}
   color:var(--muted);
   line-height:1.45;
 }
+
+/* Larger How It Works graphic */
+.how-section{
+  grid-template-columns:.72fr 1.28fr;
+  gap:48px;
+}
+.how-image{
+  max-width:none;
+  width:100%;
+  justify-self:stretch;
+  padding:10px;
+  border-radius:28px;
+}
+.how-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:20px;
+}
+@media(max-width:900px){
+  .how-section{grid-template-columns:1fr}
+  .how-image{
+    width:100%;
+    max-width:none;
+    justify-self:stretch;
+  }
+}
