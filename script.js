@@ -26,6 +26,8 @@ const productPricing = {
   'Black Trim Tote': ['$20.00','Personalized tote price.'],
   'Ivory Tote': ['$20.00','Personalized tote price.'],
   'Natural Tote': ['$20.00','Personalized tote price.'],
+  '4-Pack Mini Canvas Bags': ['$40.00','Price for a pack of 4 mini canvas bags.'],
+  '6-Pack Mini Canvas Bags': ['$55.00','Price for a pack of 6 mini canvas bags.'],
   'Custom Banner': ['Starting at $50','Final price depends on customization.'],
   'Party Décor': ['Starting at $50','Final price depends on customization.'],
   'Personalized Gift': ['Starting at $50','Final price depends on customization.'],
