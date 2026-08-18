@@ -156,3 +156,28 @@ footer p{margin:0}
   .product-grid{grid-template-columns:1fr}.product-body p{min-height:auto}
   .order-form{grid-template-columns:1fr}.contact-actions{width:100%}.contact-actions .btn{flex:1}
 }
+
+.form-status{
+  display:none;
+  padding:16px 18px;
+  border-radius:16px;
+  font-weight:600;
+  line-height:1.5;
+}
+.form-status.show{display:block}
+.form-status.success{
+  background:var(--sage-soft,#eef3eb);
+  border:1px solid var(--sage,#adbea4);
+  color:#4f654a;
+}
+.form-status.error{
+  background:var(--pink-soft,#f9e9eb);
+  border:1px solid var(--pink,#e7b7bd);
+  color:#8b4f59;
+}
+#submitOrderBtn:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}

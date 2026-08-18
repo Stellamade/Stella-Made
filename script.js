@@ -2,31 +2,59 @@ const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
 menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+document.querySelectorAll('.nav a').forEach(link =>
+  link.addEventListener('click', () => nav.classList.remove('open'))
+);
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
-document.getElementById('orderForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const data = new FormData(this);
-  const subject = encodeURIComponent(`Custom Order Request from ${data.get('name')}`);
-  const body = encodeURIComponent(
-`Hi Stella Made!
+const orderForm = document.getElementById('orderForm');
+const submitButton = document.getElementById('submitOrderBtn');
+const formStatus = document.getElementById('formStatus');
 
-I'd like to place a custom order.
+function showStatus(message, type) {
+  formStatus.textContent = message;
+  formStatus.className = `form-status full show ${type}`;
+}
 
-Name: ${data.get('name')}
-Email: ${data.get('email')}
-Item: ${data.get('item')}
-Need it by: ${data.get('date') || 'Not specified'}
-Font / lettering: ${data.get('font') || 'Open to suggestions'}
-Preferred colors: ${data.get('colors') || 'Open to suggestions'}
+orderForm.addEventListener('submit', async function (event) {
+  event.preventDefault();
 
-Personalization / details:
-${data.get('details')}
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+  formStatus.className = 'form-status full';
+  formStatus.textContent = '';
 
-Thank you!`
-  );
+  const formData = new FormData(orderForm);
+  formData.append('_subject', `New Stella Made Order Request — ${formData.get('name')}`);
+  formData.append('_template', 'table');
+  formData.append('_captcha', 'false');
 
-  // Replace this address with your final Stella Made business email.
-  window.location.href = `mailto:hello@stellamade.com?subject=${subject}&body=${body}`;
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/Jbgalante30@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || result.success === false || result.success === 'false') {
+      throw new Error('Submission failed');
+    }
+
+    orderForm.reset();
+    showStatus(
+      'Thank you! We received your request. Stella Made will get back to you soon. ♡',
+      'success'
+    );
+  } catch (error) {
+    showStatus(
+      'We couldn’t send your request just now. Please try again or message @shop.stellamade on Instagram.',
+      'error'
+    );
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit Order Request';
+  }
 });
