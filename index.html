@@ -136,7 +136,7 @@
       <div class="order-intro">
         <div class="eyebrow">LET'S MAKE SOMETHING CUTE</div>
         <h2>Start your custom order.</h2>
-        <p>Fill in the details below. When you hit send, your email app will open with the order request ready to send.</p>
+        <p>Fill in the details below and submit your request. We’ll receive your order details directly and get back to you as soon as possible.</p>
       </div>
 
       <form id="orderForm" class="order-form">
@@ -162,8 +162,9 @@
         <label>Preferred colors<input name="colors" type="text" placeholder="Pink, sage, beige..."></label>
 
         <label class="full">Tell us what you want personalized<textarea required name="details" rows="5" placeholder="Name, wording, theme, design idea, quantity, special requests..."></textarea></label>
-        <button class="btn primary full" type="submit">Send My Custom Order</button>
-        <p class="form-note full">Business email can be swapped in as soon as you give it to me.</p>
+        <button class="btn primary full" id="submitOrderBtn" type="submit">Submit Order Request</button>
+        <div id="formStatus" class="form-status full" role="status" aria-live="polite"></div>
+        <p class="form-note full">Submitting this form sends your request directly to Stella Made. No email app required.</p>
       </form>
     </section>
 
