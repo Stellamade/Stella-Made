@@ -31,7 +31,7 @@ orderForm.addEventListener('submit', async function (event) {
   formData.append('_captcha', 'false');
 
   try {
-    const response = await fetch('https://formsubmit.co/ajax/Jbgalante30@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/stellamadeorders@gmail.com', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: formData
