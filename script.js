@@ -17,6 +17,29 @@ function showStatus(message, type) {
   formStatus.className = `form-status full show ${type}`;
 }
 
+
+const itemSelect = orderForm.querySelector('select[name="item"]');
+const livePriceValue = document.getElementById('livePriceValue');
+const livePriceNote = document.getElementById('livePriceNote');
+const productPricing = {
+  'Blush Tote': ['$20.00','Personalized tote price.'],
+  'Black Trim Tote': ['$20.00','Personalized tote price.'],
+  'Ivory Tote': ['$20.00','Personalized tote price.'],
+  'Natural Tote': ['$20.00','Personalized tote price.'],
+  'Custom Banner': ['Starting at $50','Final price depends on customization.'],
+  'Party Décor': ['Starting at $50','Final price depends on customization.'],
+  'Personalized Gift': ['Starting at $50','Final price depends on customization.'],
+  'Something Else': ['Custom pricing','Tell us what you have in mind and we’ll follow up.']
+};
+function updateLivePrice(){
+  const p=productPricing[itemSelect.value]||productPricing['Something Else'];
+  livePriceValue.textContent=p[0]; livePriceNote.textContent=p[1];
+}
+itemSelect.addEventListener('change',updateLivePrice); updateLivePrice();
+document.querySelectorAll('.customize-link').forEach(link=>{
+  link.addEventListener('click',()=>{itemSelect.value=link.dataset.product;updateLivePrice();});
+});
+
 orderForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
@@ -26,6 +49,9 @@ orderForm.addEventListener('submit', async function (event) {
   formStatus.textContent = '';
 
   const formData = new FormData(orderForm);
+  const shownPrice=(productPricing[formData.get('item')]||productPricing['Something Else']);
+  formData.append('displayed_price',shownPrice[0]);
+  formData.append('pricing_note',shownPrice[1]);
   formData.append('_subject', `New Stella Made Order Request — ${formData.get('name')}`);
   formData.append('_template', 'table');
   formData.append('_captcha', 'false');

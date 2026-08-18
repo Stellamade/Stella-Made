@@ -65,9 +65,9 @@
           <div class="product-image"><img src="pink-tote.png" alt="Pink and beige personalized tote"></div>
           <div class="product-body">
             <span class="product-tag">Sweet & playful</span>
-            <h3>Blush Tote</h3>
+            <h3>Blush Tote</h3><div class="product-price">$20.00</div>
             <p>Soft pink and natural tones with a personalized front pocket.</p>
-            <a href="#order">Customize this tote →</a>
+            <a class="customize-link" data-product="Blush Tote" href="#order">Customize this tote →</a>
           </div>
         </article>
 
@@ -75,9 +75,9 @@
           <div class="product-image"><img src="black-tote.png" alt="Black and natural personalized tote"></div>
           <div class="product-body">
             <span class="product-tag sage">Classic</span>
-            <h3>Black Trim Tote</h3>
+            <h3>Black Trim Tote</h3><div class="product-price">$20.00</div>
             <p>A clean neutral tote with bold black trim and custom lettering.</p>
-            <a href="#order">Customize this tote →</a>
+            <a class="customize-link" data-product="Black Trim Tote" href="#order">Customize this tote →</a>
           </div>
         </article>
 
@@ -85,9 +85,9 @@
           <div class="product-image"><img src="white-tote.png" alt="White and natural personalized tote"></div>
           <div class="product-body">
             <span class="product-tag beige">Light & neutral</span>
-            <h3>Ivory Tote</h3>
+            <h3>Ivory Tote</h3><div class="product-price">$20.00</div>
             <p>Fresh, simple and soft with personalized script lettering.</p>
-            <a href="#order">Customize this tote →</a>
+            <a class="customize-link" data-product="Ivory Tote" href="#order">Customize this tote →</a>
           </div>
         </article>
 
@@ -95,9 +95,9 @@
           <div class="product-image"><img src="natural-tote.png" alt="Natural personalized tote"></div>
           <div class="product-body">
             <span class="product-tag sage">Everyday favorite</span>
-            <h3>Natural Tote</h3>
+            <h3>Natural Tote</h3><div class="product-price">$20.00</div>
             <p>A warm neutral option that works beautifully with any font color.</p>
-            <a href="#order">Customize this tote →</a>
+            <a class="customize-link" data-product="Natural Tote" href="#order">Customize this tote →</a>
           </div>
         </article>
       </div>
@@ -145,16 +145,22 @@
 
         <label>What would you like?
           <select name="item">
-            <option>Pink Tote</option>
-            <option>Black Trim Tote</option>
-            <option>Ivory Tote</option>
-            <option>Natural Tote</option>
-            <option>Custom banner</option>
-            <option>Party décor</option>
-            <option>Personalized gift</option>
-            <option>Something else</option>
+            <option value="Blush Tote">Blush Tote — $20.00</option>
+            <option value="Black Trim Tote">Black Trim Tote — $20.00</option>
+            <option value="Ivory Tote">Ivory Tote — $20.00</option>
+            <option value="Natural Tote">Natural Tote — $20.00</option>
+            <option value="Custom Banner">Custom Banner — Starting at $50</option>
+            <option value="Party Décor">Party Décor — Starting at $50</option>
+            <option value="Personalized Gift">Personalized Gift — Starting at $50</option>
+            <option value="Something Else">Something else</option>
           </select>
         </label>
+
+        <div id="livePrice" class="live-price">
+          <span>Estimated price</span>
+          <strong id="livePriceValue">$20.00</strong>
+          <small id="livePriceNote">Personalized tote price.</small>
+        </div>
 
         <label>Need it by<input name="date" type="date"></label>
 

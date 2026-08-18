@@ -181,3 +181,9 @@ footer p{margin:0}
   transform:none;
   box-shadow:none;
 }
+
+.product-price{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:var(--ink);margin:2px 0 10px}
+.live-price{align-self:end;display:flex;flex-direction:column;gap:3px;padding:14px 16px;border-radius:16px;background:linear-gradient(120deg,var(--pink-soft),var(--beige-soft));border:1px solid var(--line)}
+.live-price span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--sage-dark)}
+.live-price strong{font-family:"Playfair Display",serif;font-size:26px}
+.live-price small{color:var(--muted)}
